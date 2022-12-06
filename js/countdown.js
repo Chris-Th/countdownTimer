@@ -1,0 +1,3 @@
+class CountDown {
+    constructor(expiredDate)
+}
