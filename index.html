@@ -25,16 +25,17 @@
 </form>
 
 <script>
-  function inputValueDatetimeLocal() {
+ /* function inputValueDatetimeLocal() {
     var targetDateTime = document.getElementById("targetDateTime").value;
-  }
+    var targetValue = targetDateTime.value;
+  }*/
 
-var   
+  
 //Zieldatum u. -zeit eingeben
 let countDownDate = new Date("targetDateTime").getTime();
 
 //Countdown wird jede Sekunde erneuert
-let x = setInterval(function() {
+let x = setInterval(function(updateCounter, 1000) {
 
 //aktuelles Datum/Zeit holen
 let now = new Date().getTime()
