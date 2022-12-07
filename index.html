@@ -31,7 +31,7 @@
 
 var   
 //Zieldatum u. -zeit eingeben
-let countDownDate = new Date("Jan 1, 2023 00:00:01").getTime();
+let countDownDate = new Date("targetDateTime").getTime();
 
 //Countdown wird jede Sekunde erneuert
 let x = setInterval(function() {
@@ -50,6 +50,8 @@ let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 // Resultat-Output in einem element mit id="display"
+document.getElementById("display").innerHTML = days + "Tage " + hours + "Stunden " + minutes + "Minuten " + seconds + "Sekunden ";
+
 if (distance < 0) {
     clearInterval(x);
     document.getElementById("display").innerHTML = "Zieldatum erreicht!";
@@ -58,6 +60,25 @@ if (distance < 0) {
 
 
 </script>
+
+<div>
+  <p id="year"></p>
+</div>
+<div>
+  <p id="month"></p>
+</div>
+<div>
+  <p id="day"></p>
+</div>
+<div>
+  <p id="hour"></p>
+</div>
+<div>
+  <p id="minute"></p>
+</div>
+<div>
+  <p id="second"></p>
+</div>
 
 </body>
 </html> 
