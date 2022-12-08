@@ -15,28 +15,34 @@
 <h1>Countdown Timer</h1>
 <p id="display"></p>
 
-<form onsubmit="return getValue('targetDateTime')">
+<form name="userDateTime">
 
 
-    <input type="datetime-local" id="targetDateTime" name="targetDateTime">
+    <input type="datetime-local" id="inputDateTime" name="inputDateTime">
     
-    <button onclick="inputValueDatetimeLocal()" id="submitDateTime">bestätigen</button> 
+    <button type="button" id="btn">bestätigen</button> 
     
 </form>
 
 <script>
- /* function inputValueDatetimeLocal() {
-    var targetDateTime = document.getElementById("targetDateTime").value;
-    var targetValue = targetDateTime.value;
-  }*/
-
+ 
+    var targetDateTime = document.getElementById("inputDateTime").value;
+    
   
+
+  document.getElementById("btn").addEventListener("click", function(targetDateTime) {
+    doCountDown();
+  });
+  
+  function doCountDown() {  
 //Zieldatum u. -zeit eingeben
-let countDownDate = new Date("targetDateTime").getTime();
+let countDownDate = new Date(targetDateTime).getTime();
+// let countDownDate = new Date(2023, 01, 18, 10, 33).getTime();
 
 //Countdown wird jede Sekunde erneuert
-let x = setInterval(function(updateCounter, 1000) {
-
+let x = setInterval(countdown, 1000); 
+  
+function countdown() {
 //aktuelles Datum/Zeit holen
 let now = new Date().getTime()
 
@@ -55,31 +61,14 @@ document.getElementById("display").innerHTML = days + "Tage " + hours + "Stunden
 
 if (distance < 0) {
     clearInterval(x);
-    document.getElementById("display").innerHTML = "Zieldatum erreicht!";
+    document.getElementById("display").innerHTML = "Jetzt ist die Zukunft von früher!";
 }
-}, 1000);
-
+}
+  }
 
 </script>
 
-<div>
-  <p id="year"></p>
-</div>
-<div>
-  <p id="month"></p>
-</div>
-<div>
-  <p id="day"></p>
-</div>
-<div>
-  <p id="hour"></p>
-</div>
-<div>
-  <p id="minute"></p>
-</div>
-<div>
-  <p id="second"></p>
-</div>
+
 
 </body>
 </html> 
