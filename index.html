@@ -5,24 +5,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--<link href="https://cdn.jsdeliver.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+     <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+    </head>
 
 <body>
 
-<h1>Countdown Timer</h1>
-<p id="display"></p>
+<div class="container container-sm bg-">
+
+  <h1>Countdown Timer</h1>
+<p id="display" class="display-3"></p>
 
 <form name="userDateTime">
 
+  <div class="mb-1 mt-3">
+    <label for="datetime-local" class="form-label">
+      Bitte gib die Zielzeit ein:
+    </label> 
+    
+  </div>
 
-    <input type="datetime-local" id="inputDateTime" name="inputDateTime">
+  <div class="input-group mb-3">
     
-    <button type="button" id="btn">Countdown starten</button> 
-    <button type="button" id="reset">Countdown stoppen</button>
+    <input type="datetime-local" class="form-control" id="inputDateTime" name="inputDateTime">
     
+    <button class="btn btn-success" type="button" id="btn">Los!</button> 
+
+    
+
+      <button class="btn btn-danger" type="button" id="reset">Stop</button>
+
+    
+  </div>
+  
+      
+      
+  
 </form>
 
 <script>
@@ -81,6 +106,10 @@ if (distance < 0) {
 
 
 </script>
+
+
+</div>
+
 
 
 
