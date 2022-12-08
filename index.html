@@ -20,7 +20,8 @@
 
     <input type="datetime-local" id="inputDateTime" name="inputDateTime">
     
-    <button type="button" id="btn">bestätigen</button> 
+    <button type="button" id="btn">Countdown starten</button> 
+    <button type="button" id="reset">Countdown stoppen</button>
     
 </form>
 
@@ -29,10 +30,12 @@
     var targetDateTime = document.getElementById("inputDateTime").value;
     
   
-
+  
   document.getElementById("btn").addEventListener("click", function(targetDateTime) {
     doCountDown();
   });
+
+
   
   function doCountDown() {  
 //Zieldatum u. -zeit eingeben
@@ -40,7 +43,14 @@ let countDownDate = new Date(targetDateTime).getTime();
 // let countDownDate = new Date(2023, 01, 18, 10, 33).getTime();
 
 //Countdown wird jede Sekunde erneuert
-let x = setInterval(countdown, 1000); 
+const x = setInterval(countdown, 1000); 
+
+document.getElementById("reset").addEventListener("click", stopFunction);
+
+  function stopFunction() {
+    clearInterval(x); 
+    alert("Countdown gestoppt! Klicken Sie auf 'Countdown starten' um weiterzufahren, oder geben Sie einen neuen Ziel-Zeitpunkt ein.");
+  }
   
 function countdown() {
 //aktuelles Datum/Zeit holen
@@ -65,6 +75,10 @@ if (distance < 0) {
 }
 }
   }
+
+  
+
+
 
 </script>
 
