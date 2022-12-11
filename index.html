@@ -20,50 +20,60 @@
 
 <div class="container container-sm bg-">
 
-    <h1>Countdown Timer</h1>
-  <!-- <h3 id="display" class="display-3"></h3>-->
+  
+  
 
-  <!--<div class="d-inline-flex p-5 m-5 bg-secondary text-white" id="ctContainer">-->
-    <div class="shadow-lg d-flex p-3 bg-light row text-center">
-      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="dItem"></div>
-       <!--<span class="timeDivider align-middle"> : </span>-->
-      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="hItem"></div>
-       <!--<span class="timeDivider align-middle"> : </span>-->
-      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="mItem"></div>
-       <!--<span class="timeDivider align-middle"> : </span>-->
-      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="sItem"></div>
+
+    <div id="showTimeContainer" class="shadow-lg d-flex p-3 mt-5 bg-light row text-center">
+      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="dItem">0</div>
+      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="hItem">0</div>
+      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="mItem">0</div>
+      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="sItem">0</div>
     </div>
-  <!--</div>-->
   <p></p>
-  <div class="shadow-lg d-flex p-3 bg-light row text-center">
-  <form name="userDateTime">
-    <div class="mb-1 mt-3">
-      <label for="datetime-local" class="form-label">
-        Bitte gib die Zielzeit ein:
-      </label> 
-    </div>
+  <div id="setTimeContainer" class="shadow-lg d-flex p-3 mt-5 bg-light row">
+    <form name="userDateTime">
+      <div class="row">
+        <div class="col mb-3">Countdown-Zeitpunkt eingeben:</div>
+      </div>
+      <div class="row">
+        <div class="input-group mb-3 col">
+          <!--<label for="datetime-local" class="form-label">
+            Bitte gib den Countdown-Zeitpunkt ein:
+          </label> -->
+          <input type="datetime-local" class="form-control" id="inputDateTime" name="inputDateTime" placeholder="Zeitpunkt eingeben">
+        </div>  
+        <div class="btn-group mb-3 col">
+          <button class="btn btn-success" type="button" id="btn">Los!</button> 
 
-    <div class="input-group mb-3">
-      
-      <input type="datetime-local" class="form-control" id="inputDateTime" name="inputDateTime">
-      
-      <button class="btn btn-success" type="button" id="btn">Los!</button> 
+          <button class="btn btn-danger" type="button" id="stop">Stop</button>
 
-      
-
-      <button class="btn btn-danger" type="button" id="reset">Stop</button>
-
-      
-    </div>
-  </form>
+          <button class="btn btn-primary" type="button" id="reset">Reset</button>
+        </div>
+      </div> 
+    </form>  
+  </div>
+  
   </div>
 </div>
 
 <script>
+
+  // hide timer by default(unfertig)
+  // function hideTimer() {document.getElementById("showTimeContainer").style.display = 'none'};
+
  
-    var targetDateTime = document.getElementById("inputDateTime").value;
+  var targetDateTime = document.getElementById("inputDateTime").value;
     
+  function reset() { 
+    document.getElementsByName("userDateTime").reset;
+    window.location.reload();
+  }
+  document.getElementById("reset").addEventListener("click", reset);
   
+  //function resetTimer() {
+    //window.location.reload();
+  //} 
   
   document.getElementById("btn").addEventListener("click", 
     doCountDown);
@@ -74,13 +84,12 @@
  
 //Zieldatum u. -zeit eingeben
 let countDownDate = new Date(targetDateTime).getTime();
-// let countDownDate = new Date(2023, 01, 18, 10, 33).getTime();
-//ndocument.getElementById("cdContainer").style.display = "inline-flex";
+
 
 //Countdown wird jede Sekunde erneuert
 const x = setInterval(countdown, 1000); 
 
-document.getElementById("reset").addEventListener("click", stopFunction);
+document.getElementById("stop").addEventListener("click", stopFunction);
 
   function stopFunction() {
     clearInterval(x); 
