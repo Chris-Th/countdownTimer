@@ -20,48 +20,49 @@
 
 <div class="container container-sm bg-">
 
-  <h1>Countdown Timer</h1>
-<!-- <h3 id="display" class="display-3"></h3>-->
+    <h1>Countdown Timer</h1>
+  <!-- <h3 id="display" class="display-3"></h3>-->
 
-<div class="d-inline-flex p-5 m-5 bg-secondary text-white" id="ctContainer">
+  <!--<div class="d-inline-flex p-5 m-5 bg-secondary text-white" id="ctContainer">-->
+    <div class="row text-center">
+      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="dItem"></div>
+       <!--<span class="timeDivider align-middle"> : </span>-->
+      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="hItem"></div>
+       <!--<span class="timeDivider align-middle"> : </span>-->
+      <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="mItem"></div>
+       <!--<span class="timeDivider align-middle"> : </span>-->
+      <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="sItem"></div>
+    </div>
+  <!--</div>-->
 
-  <div class="text-bg-warning p-5 m-2" id="dItem"></div>
-  <span class="timeDivider align-middle"> : </span>
-  <div class="text-bg-warning p-5 m-2" id="hItem"></div>
-  <span class="timeDivider align-middle"> : </span>
-  <div class="text-bg-warning p-5 m-2" id="mItem"></div>
-  <span class="timeDivider"> : </span>
-  <div class="text-bg-warning p-5 m-2" id="sItem"></div>
+  <form name="userDateTime">
 
-</div>
+    <div class="mb-1 mt-3">
+      <label for="datetime-local" class="form-label">
+        Bitte gib die Zielzeit ein:
+      </label> 
+      
+    </div>
 
-<form name="userDateTime">
+    <div class="input-group mb-3">
+      
+      <input type="datetime-local" class="form-control" id="inputDateTime" name="inputDateTime">
+      
+      <button class="btn btn-success" type="button" id="btn">Los!</button> 
 
-  <div class="mb-1 mt-3">
-    <label for="datetime-local" class="form-label">
-      Bitte gib die Zielzeit ein:
-    </label> 
+      
+
+        <button class="btn btn-danger" type="button" id="reset">Stop</button>
+
+      
+    </div>
     
-  </div>
-
-  <div class="input-group mb-3">
-    
-    <input type="datetime-local" class="form-control" id="inputDateTime" name="inputDateTime">
-    
-    <button class="btn btn-success" type="button" id="btn">Los!</button> 
-
-    
-
-      <button class="btn btn-danger" type="button" id="reset">Stop</button>
-
-    
-  </div>
-  
 
       
       
   
 </form>
+</div>
 
 <script>
  
@@ -108,10 +109,10 @@ let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 // Resultat-Output in einem element mit id="display"
 // document.getElementById("display").innerHTML = days + "Tage " + hours + "Stunden " + minutes + "Minuten " + seconds + "Sekunden ";
 
-document.getElementById("dItem").innerHTML = days + "<br> Tage";
-document.getElementById("hItem").innerHTML = hours + "<br> Stunden";
-document.getElementById("mItem").innerHTML = minutes + "<br> Min.";
-document.getElementById("sItem").innerHTML = seconds + "<br> Sek.";
+document.getElementById("dItem").innerHTML = "<h2>" + days + "</h2><br><h4 class='text-center'><small>Tage</small></h4>";
+document.getElementById("hItem").innerHTML = "<h2>" + hours + "</h2><br><h4><small>Stunden</small></h4>";
+document.getElementById("mItem").innerHTML = "<h2>" + minutes + "</h2><br><h4><small>Min</small></h4>";
+document.getElementById("sItem").innerHTML = "<h2>" + seconds + "</h2><br><h4><small>Sek</small></h4>";
 
 
 if (distance < 0) {
@@ -128,7 +129,7 @@ if (distance < 0) {
 </script>
 
 
-</div>
+
 
 
 
