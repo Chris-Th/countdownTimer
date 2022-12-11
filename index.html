@@ -24,7 +24,7 @@
   <!-- <h3 id="display" class="display-3"></h3>-->
 
   <!--<div class="d-inline-flex p-5 m-5 bg-secondary text-white" id="ctContainer">-->
-    <div class="row text-center">
+    <div class="shadow-lg d-flex p-3 bg-light row text-center">
       <div class="col-sm-3 text-bg-info p-5 my-2 text-center" id="dItem"></div>
        <!--<span class="timeDivider align-middle"> : </span>-->
       <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="hItem"></div>
@@ -34,14 +34,13 @@
       <div class="col-sm-3 text-bg-primary p-5 my-2 text-center" id="sItem"></div>
     </div>
   <!--</div>-->
-
+  <p></p>
+  <div class="shadow-lg d-flex p-3 bg-light row text-center">
   <form name="userDateTime">
-
     <div class="mb-1 mt-3">
       <label for="datetime-local" class="form-label">
         Bitte gib die Zielzeit ein:
       </label> 
-      
     </div>
 
     <div class="input-group mb-3">
@@ -52,16 +51,12 @@
 
       
 
-        <button class="btn btn-danger" type="button" id="reset">Stop</button>
+      <button class="btn btn-danger" type="button" id="reset">Stop</button>
 
       
     </div>
-    
-
-      
-      
-  
-</form>
+  </form>
+  </div>
 </div>
 
 <script>
@@ -109,10 +104,10 @@ let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 // Resultat-Output in einem element mit id="display"
 // document.getElementById("display").innerHTML = days + "Tage " + hours + "Stunden " + minutes + "Minuten " + seconds + "Sekunden ";
 
-document.getElementById("dItem").innerHTML = "<h2>" + days + "</h2><br><h4 class='text-center'><small>Tage</small></h4>";
-document.getElementById("hItem").innerHTML = "<h2>" + hours + "</h2><br><h4><small>Stunden</small></h4>";
-document.getElementById("mItem").innerHTML = "<h2>" + minutes + "</h2><br><h4><small>Min</small></h4>";
-document.getElementById("sItem").innerHTML = "<h2>" + seconds + "</h2><br><h4><small>Sek</small></h4>";
+document.getElementById("dItem").innerHTML = "<h2>" + days + "</h2><br><h6 class='text-center small'>Tage</h6>";
+document.getElementById("hItem").innerHTML = "<h2>" + hours + "</h2><br><h6 class='text-center small'>Stunden</h6>";
+document.getElementById("mItem").innerHTML = "<h2>" + minutes + "</h2><br><h6 class='text-center small'>Min</h6>";
+document.getElementById("sItem").innerHTML = "<h2>" + seconds + "</h2><br><h6 class='text-center small'>Sek</h6>";
 
 
 if (distance < 0) {
