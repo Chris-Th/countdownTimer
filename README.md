@@ -11,57 +11,21 @@ https://docs.google.com/presentation/d/1-5Z9viF64dG0LCCwIDxu-8I6WytKQ_M-2euFeIhV
 ## Description
 
 Simple countdown timer webpage built with  HTML, Bootstrap 5 and javascript. 
-## Getting Started
 
-### Dependencies
+It contains one input field where the user can select a countdown date using a dropdown date-selector, and type in the time (hours and minutes). 
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+There is 3 buttons offering the following funcionalities and labels:
 
-### Installing
+### Los! (en: "run!" or "start!"): 
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Starts displaying the countdown. Resumes countdown if "Stop" button had been clicked.
 
-### Executing program
+### Stop:
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+Stops countdown and displays an alert.
 
-## Help
+### Reset:
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+Resets the countdown display and the datetime-local input field to their default value.
 
-## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
