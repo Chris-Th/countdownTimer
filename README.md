@@ -29,3 +29,12 @@ Stops countdown and displays an alert.
 Resets the countdown display and the datetime-local input field to their default value.
 
 
+
+## Countdown display
+
+Countdown is displayed in 4 horizontal colums stacking vertically on small devices. 
+The styling is done with bootstrap, as well as the responsiveness.
+
+The colums display the remaining days, hours, minutes and seconds of the countdown.
+
+
