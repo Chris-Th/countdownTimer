@@ -2,10 +2,15 @@
 
 Simple functional countdown timer webpage.
 
+## Links
+
+https://www.figma.com/file/lMf0QQuBAoTxoiFAJ8jVE7/Countdown-Timer-Sketch?node-id=0%3A1&t=P9TnOyqyoqXKwOD0-1
+
+https://docs.google.com/presentation/d/1-5Z9viF64dG0LCCwIDxu-8I6WytKQ_M-2euFeIhVoN8/edit?usp=share_link
+
 ## Description
 
-An in-depth paragraph about your project and overview of use.
-
+Simple countdown timer webpage built with  HTML, Bootstrap 5 and javascript. 
 ## Getting Started
 
 ### Dependencies
